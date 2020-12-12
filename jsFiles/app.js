@@ -17,8 +17,9 @@ var Carro = /** @class */ (function () {
     return Carro;
 }());
 var Concessionaria = /** @class */ (function () {
-    function Concessionaria(endereco) {
+    function Concessionaria(endereco, listaDeCarros) {
         this.endereco = endereco;
+        this.listaDeCarros = listaDeCarros;
     }
     Concessionaria.prototype.fornecerEndereco = function () {
         return this.endereco;
@@ -47,5 +48,9 @@ var Pessoa = /** @class */ (function () {
     };
     return Pessoa;
 }());
-var p1 = new Pessoa('jao', 'uno');
-console.log();
+var carro1 = new Carro('uno', 2);
+var carro2 = new Carro('corsa', 2);
+var carro3 = new Carro('fiorino', 2);
+var listaDeCarros = [carro1, carro2, carro3];
+var concessionaria = new Concessionaria('Rua Senador Salgado Filho', listaDeCarros);
+console.log(concessionaria.mostrarListaDeCarros());
