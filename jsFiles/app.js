@@ -53,4 +53,11 @@ var carro2 = new Carro('corsa', 2);
 var carro3 = new Carro('fiorino', 2);
 var listaDeCarros = [carro1, carro2, carro3];
 var concessionaria = new Concessionaria('Rua Senador Salgado Filho', listaDeCarros);
-console.log(concessionaria.mostrarListaDeCarros());
+//console.log(concessionaria.mostrarListaDeCarros())
+var pes = new Pessoa('Jao', 'uno');
+concessionaria.mostrarListaDeCarros().map(function (carro) {
+    if (carro['modelo'] == pes.dizerCarroPreferido()) {
+        pes.comprarCarro(carro);
+    }
+});
+console.log(pes.dizerCarroQueTem());
